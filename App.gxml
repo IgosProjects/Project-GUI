@@ -1,0 +1,5 @@
+<div>
+    <plain>Hello World</plain>
+    <bold>Hello bold</bold>
+    <image src="./image.ng">
+</div>
