@@ -1,5 +1,6 @@
 import argparse
 import re
+
 def compile(file_path):
     # Read the content of the .gxml file
     with open(file_path, 'r') as file:
@@ -36,7 +37,13 @@ def main():
 
     file_path = args.file_path
     html_code = compile(file_path)
-    print(html_code)
+    
+    # Write the HTML code to an HTML file
+    output_file_path = file_path[:-5] + ".html"  # Remove ".gxml" extension and add ".html"
+    with open(output_file_path, 'w') as output_file:
+        output_file.write(html_code)
+
+    print(f"HTML code compiled and saved to {output_file_path}")
 
 if __name__ == "__main__":
     main()
